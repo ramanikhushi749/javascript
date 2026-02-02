@@ -108,4 +108,4 @@ const --> hoist-->error
 const person = {name: "demo"};
 //on console.log
 person.name= "user"; 
-person = {} ;  
+person = {} ; 3 
