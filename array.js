@@ -225,3 +225,129 @@ let arr2 = [1, 2, 3];
 arr2.push(arr2.shift());
 // Result: [2, 3, 1]
 
+
+
+//for each loop
+//for each -- array ni darek value mate loop chalse
+let i = [10,35,40,68];
+
+i.foreach((val) => {
+    let new_val = val + 10;
+    console.log (new_val);
+});
+[5,58,42,"hello"],foreach(val =>{
+    let new_arr = val +2;
+    console.log(new_arr)
+});
+
+// .map() Method;
+//map tyare j use karvu ke jyare ek new array create karvo che
+//first map create a black array -- only for understanding
+let data = [10,20,50,40,15];
+//same like a for each loop but map return a new array 
+let temp_data = data.map((val) =>{
+    if (val > 20) {
+        return val;
+    }
+})
+//use case -- data ma thi specific data new array ma store karvo hoy
+//ex. product 
+
+let marks = [10,5,20,25,15]
+let final_marks = marks.map((val)=> {
+    if (val == 5){
+        return val +4;
+     }
+     return val;
+})
+
+// FILTER
+// FILTER TYARE USE KARVU KE JYARE EK NEW ARRAY CREATE KARVO CHE WITH CONDITION 
+// IF TRUE --> ADD INTO NEW ARRAY 
+// IF ELSE(FALSE) --> NOT ADD INTO NEW ARRAY
+let laptops_price = [15000,20000,30000,65000,99000,45000];
+
+let expensive_laptops = laptops_price.filter((price )
+=>{
+    if (price > 30000) return true;
+});
+
+//
+//
+let product_type = ["mobile","tablet","laptop","mouse","keyboard"];
+let filter_product_type = product_type.filter((type)
+=> {
+    if (type === "tablet" || type ==="mobile")return true;
+});
+
+//reduce
+let total_price =[15,68,45,58,52,48];
+
+let final_price = total_price.reduce((accumulator,val) =>{
+    return accumulator + val;
+    },0);//intial value of accumulator
+// 0+10=>10
+//10+68=>78
+//78+45=>123
+console.log("final price:",final_price)
+//accumulator --> je value function ma return thase te accumulator ma store thase--> accumulator name change kari sako cho
+//val -->array ni darek value
+
+//find
+//find tyare j use karvu ke jyare array mathi ek value find karvi hoy based on condition
+//find() return kare che array no element -->
+//callback no return value nahi
+//never return what you return inside it 
+// returns the array element itself -- not return array
+//.find() stops at the first match
+//it does not continue looping
+
+let product =["laptop", "mobile","tablet","desktop","smart watch"];
+let find_product = product.find((item)=> {
+    console.log("can't find product"); 
+    if(item == "tablet"){
+        return true;
+    }else if (item === "desktop"){
+        return true;
+    } else {
+        return "not found";
+    }
+    });
+
+    // find vs filter
+    // real-life scenario: shopping mall  security
+    //your are a seacurity guard at a shopping mall 
+    // chack the list of visitors
+    let people = ["john"]
+
+    //find  -->you are looking for the 
+
+    let person = people.find((name)=> name === "sara");
+    console.log(person);
+
+    //filter --> you want to find all visitors named "sara" in the list (all data check kare and list na end sudhi check kare)
+    let allsara = people.filter((name)=> name === "sara");
+    console.log(allsara);
+
+    //some
+    //check kare che ke array ma koi pan ek item condition satisfy kare che ke nahi
+     
+    let marks1 = [10,20,35,80];
+    let any = marks1.some((val)=> {
+        if (val > 85) return 12;
+        //if (val<85)return "need improvment";
+        });
+
+   // destructuring oprator -- give value to variable (ex.we don't use..)
+   let arr4 =[1,2,3,4,5]     
+
+   let [, , k]= arr4;
+
+   console.log(k);
+   let user_data=["text","text@gmail.com","male","surat"]
+
+   //spread
+   let arr8 = [1,2,3,4,5,6,7];
+
+   let arr9 = [...arr8];
+   
