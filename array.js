@@ -137,8 +137,8 @@ levels.reverse();
 
 
 // Q9. sort()
-let scores = [45, 12, 78, 34, 89];
-scores.sort((a, b) => a - b);
+let scores1 = [45, 12, 78, 34, 89];
+scores1.sort((a, b) => a - b);
 // Result: [12, 34, 45, 78, 89]
 
 
@@ -162,15 +162,15 @@ colors.splice(2, 1, 'Purple', 'Orange');
 
 
 // Q13. reverse() + push()
-let steps = ['Step 1', 'Step 2', 'Step 3'];
-steps.reverse();
-steps.push('Final Step');
+let steps1 = ['Step 1', 'Step 2', 'Step 3'];
+steps1.reverse();
+steps1.push('Final Step');
 // Result: ['Step 3', 'Step 2', 'Step 1', 'Final Step']
 
 
 // Q14. sort() strings
-let names = ['alice', 'Bob', 'charlie', 'David'];
-names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+let names1 = ['alice', 'Bob', 'charlie', 'David'];
+names1.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 // Result: ['alice', 'Bob', 'charlie', 'David']
 
 
@@ -231,7 +231,7 @@ arr2.push(arr2.shift());
 //for each -- array ni darek value mate loop chalse
 let i = [10,35,40,68];
 
-i.foreach((val) => {
+foreach((val) => {
     let new_val = val + 10;
     console.log (new_val);
 });
@@ -267,16 +267,16 @@ let final_marks = marks.map((val)=> {
 // IF ELSE(FALSE) --> NOT ADD INTO NEW ARRAY
 let laptops_price = [15000,20000,30000,65000,99000,45000];
 
-let expensive_laptops = laptops_price.filter((price )
-=>{
+let expensive_laptops = laptops_price.filter((price )=>{
+
     if (price > 30000) return true;
 });
 
 //
 //
 let product_type = ["mobile","tablet","laptop","mouse","keyboard"];
-let filter_product_type = product_type.filter((type)
-=> {
+let filter_product_type = product_type.filter((type)=>{
+
     if (type === "tablet" || type ==="mobile")return true;
 });
 
@@ -351,3 +351,80 @@ let find_product = product.find((item)=> {
 
    let arr9 = [...arr8];
    
+// ================== JavaScript map() Examples ==================
+
+// 1. Double daily steps count
+// Real life: Fitness app doubling step goal
+const steps = [1000, 2000, 3000];
+const newSteps = steps.map(step => step * 2);
+// Output: [2000, 4000, 6000]
+
+// 2. Convert minutes to seconds
+// Real life: Video duration calculation
+const minutes = [1, 5, 10];
+const seconds = minutes.map(min => min * 60);
+// Output: [60, 300, 600]
+
+// 3. Add ₹50 delivery charge to prices
+// Real life: Food delivery app
+const prices1 = [200, 350, 500];
+const finalPrices = prices1.map(price => price + 50);
+// Output: [250, 400, 550]
+
+// 4. Convert exam marks to grades
+// Real life: Result system
+const marks11 = [35, 72, 88, 40];
+const grades = marks11.map(marks11 => marks11 >= 40 ? 'Pass' : 'Fail');
+// Output: ['Fail', 'Pass', 'Pass', 'Pass']
+
+// 5. Capitalize names
+// Real life: Display usernames properly
+const names = ['rahul', 'neha', 'amit'];
+const formattedNames = names.map(
+  name => name[0].toUpperCase() + name.slice(1)
+);
+// Output: ['Rahul', 'Neha', 'Amit']
+
+// 6. Apply 10% discount
+// Real life: Shopping sale
+const prices2 = [500, 1000, 1500];
+const discounted = prices2.map(price => price - price * 0.10);
+// Output: [450, 900, 1350]
+
+// 7. Add bonus points based on condition
+// Real life: Game scoring system
+const scores = [45, 60, 85];
+const finalScores = scores.map(score => {
+  if (score >= 80) return score + 20;
+  if (score >= 50) return score + 10;
+  return score;
+});
+// Output: [45, 70, 105]
+
+// 8. Convert Celsius to Fahrenheit
+// Real life: Weather app
+const celsius = [0, 20, 30];
+const fahrenheit = celsius.map(temp => (temp * 9/5) + 32);
+// Output: [32, 68, 86]
+
+// 9. Generate table of 2
+// Real life: Math learning app
+const numbers = [1, 2, 3, 4];
+const tableOfTwo = numbers.map(num => num * 2);
+// Output: [2, 4, 6, 8]
+
+// 10. Format SMS messages
+// Real life: SMS notification system
+const balances = [500, 1200, 300];
+const messages = balances.map(
+  balance => `Your balance is ₹${balance}`
+);
+// Output:
+// [
+//   'Your balance is ₹500',
+//   'Your balance is ₹1200',
+//   'Your balance is ₹300'
+// ]
+
+
+

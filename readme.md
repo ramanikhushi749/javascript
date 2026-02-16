@@ -1231,3 +1231,238 @@ let sliced = values.slice(-3, -1);
 let arr2 = [1, 2, 3];
 arr2.push(arr2.shift());
 // Result: [2, 3, 1]
+
+
+
+
+// ================== JavaScript map() Examples ==================
+
+// 1. Double daily steps count
+// Real life: Fitness app doubling step goal
+const steps = [1000, 2000, 3000];
+const newSteps = steps.map(step => step * 2);
+// Output: [2000, 4000, 6000]
+
+// 2. Convert minutes to seconds
+// Real life: Video duration calculation
+const minutes = [1, 5, 10];
+const seconds = minutes.map(min => min * 60);
+// Output: [60, 300, 600]
+
+// 3. Add ₹50 delivery charge to prices
+// Real life: Food delivery app
+const prices1 = [200, 350, 500];
+const finalPrices = prices1.map(price => price + 50);
+// Output: [250, 400, 550]
+
+// 4. Convert exam marks to grades
+// Real life: Result system
+const marks = [35, 72, 88, 40];
+const grades = marks.map(mark => mark >= 40 ? 'Pass' : 'Fail');
+// Output: ['Fail', 'Pass', 'Pass', 'Pass']
+
+// 5. Capitalize names
+// Real life: Display usernames properly
+const names = ['rahul', 'neha', 'amit'];
+const formattedNames = names.map(
+  name => name[0].toUpperCase() + name.slice(1)
+);
+// Output: ['Rahul', 'Neha', 'Amit']
+
+// 6. Apply 10% discount
+// Real life: Shopping sale
+const prices2 = [500, 1000, 1500];
+const discounted = prices2.map(price => price - price * 0.10);
+// Output: [450, 900, 1350]
+
+// 7. Add bonus points based on condition
+// Real life: Game scoring system
+const scores = [45, 60, 85];
+const finalScores = scores.map(score => {
+  if (score >= 80) return score + 20;
+  if (score >= 50) return score + 10;
+  return score;
+});
+// Output: [45, 70, 105]
+
+// 8. Convert Celsius to Fahrenheit
+// Real life: Weather app
+const celsius = [0, 20, 30];
+const fahrenheit = celsius.map(temp => (temp * 9/5) + 32);
+// Output: [32, 68, 86]
+
+// 9. Generate table of 2
+// Real life: Math learning app
+const numbers = [1, 2, 3, 4];
+const tableOfTwo = numbers.map(num => num * 2);
+// Output: [2, 4, 6, 8]
+
+// 10. Format SMS messages
+// Real life: SMS notification system
+const balances = [500, 1200, 300];
+const messages = balances.map(
+  balance => `Your balance is ₹${balance}`
+);
+// Output:
+// [
+//   'Your balance is ₹500',
+//   'Your balance is ₹1200',
+//   'Your balance is ₹300'
+// ]
+
+
+
+
+// ================== JavaScript reduce() Examples ==================
+
+// 1. Total money in wallet
+// Real life: Add all cash amounts
+const money = [100, 200, 50];
+const totalMoney = money.reduce((sum, amount) => sum + amount, 0);
+// Output: 350
+
+// 2. Total steps walked in a week
+// Real life: Fitness tracker
+const steps = [3000, 5000, 4000, 6000];
+function addSteps(total, step) {
+  return total + step;
+}
+const weeklySteps = steps.reduce(addSteps, 0);
+// Output: 18000
+
+// 3. Find total cart price
+// Real life: Shopping bill
+const prices = [499, 299, 199];
+const totalPrice = prices.reduce((total, price) => total + price, 0);
+// Output: 997
+
+// 4. Find maximum score
+// Real life: Highest exam mark
+const marks1 = [45, 88, 67, 92];
+const highest = marks1.reduce((max, mark) => {
+  return mark > max ? mark : max;
+}, marks1[0]);
+// Output: 92
+
+// 5. Count total characters
+// Real life: Text length calculation
+const words1 = ['Hi', 'Hello', 'JS'];
+const totalChars = words1.reduce(
+  (count, word) => count + word.length, 0
+);
+// Output: 9
+
+// 6. Combine words into a sentence
+// Real life: Message builder
+const words2 = ['Learning', 'JavaScript', 'is', 'fun'];
+const sentence = words2.reduce(
+  (text, word) => text + ' ' + word
+);
+// Output: "Learning JavaScript is fun"
+
+// 7. Count passed students
+// Real life: Result summary
+const marks2 = [35, 72, 88, 40, 25];
+const passCount = marks2.reduce((count, mark) => {
+  return mark >= 40 ? count + 1 : count;
+}, 0);
+// Output: 3
+
+// 8. Calculate final balance
+// Real life: Bank account calculation
+const transactions = [1000, -200, -300, 500];
+const finalBalance = transactions.reduce(
+  (balance, amount) => balance + amount, 0
+);
+// Output: 1000
+
+// 9. Build comma-separated string
+// Real life: Display values in UI
+const items = ['Pen', 'Book', 'Pencil'];
+const result = items.reduce(
+  (text, item) => text + ', ' + item
+);
+// Output: "Pen, Book, Pencil"
+
+
+
+
+// ========== map + filter + reduce PRACTICE QUESTIONS ==========
+
+// Q1. Shopping App – Discounted Total
+const prices1 = [200, 800, 1200, 450, 700];
+const total = prices1
+  .filter(price => price > 500)
+  .map(price => price * 0.9)
+  .reduce((sum, price) => sum + price, 0);
+// Output: 2430
+
+// Q2. Fitness App – Total Active Minutes (Calories)
+const minutes = [20, 45, 60, 15, 90];
+const totalCalories = minutes
+  .filter(min => min > 30)
+  .map(min => min * 5)
+  .reduce((total, cal) => total + cal, 0);
+// Output: 975
+
+// Q3. Exam System – Average of Passed Marks
+const marks = [35, 72, 88, 40, 25, 90];
+const passed = marks.filter(mark => mark >= 40);
+const average = passed.reduce((sum, mark) => sum + mark, 0) / passed.length;
+// Output: 72.5
+
+// Q4. Salary System – Monthly Payout
+const wages = [300, 800, 450, 1000, 600];
+const totalPayout = wages
+  .filter(wage => wage > 500)
+  .map(wage => wage + 100)
+  .reduce((total, wage) => total + wage, 0);
+// Output: 2700
+
+// Q5. Online Course – Completion Points
+const progress = [20, 50, 75, 40, 100];
+const totalPoints1 = progress
+  .filter(p => p >= 50)
+  .map(p => p * 2)
+  .reduce((sum, p) => sum + p, 0);
+// Output: 450
+
+// Q6. Bank Transactions – Final Credited Amount
+const transactions = [1000, -500, 2000, -300, 1500];
+const creditedAmount = transactions
+  .filter(amount => amount > 0)
+  .map(amount => amount * 1.02)
+  .reduce((total, amount) => total + amount, 0);
+// Output: 4590
+
+// Q7. Game App – Final Score
+const scores = [30, 60, 90, 45, 80];
+const finalScore = scores
+  .filter(score => score > 50)
+  .map(score => score + 10)
+  .reduce((sum, score) => sum + score, 0);
+// Output: 270
+
+// Q8. E-commerce – Total Taxed Amount
+const prices2 = [500, 1200, 3000, 800, 1500];
+const finalAmount = prices2
+  .filter(price => price > 1000)
+  .map(price => price * 1.18)
+  .reduce((sum, price) => sum + price, 0);
+// Output: 6726
+
+// Q9. Attendance System – Reward Points
+const hours = [6, 8, 9, 7, 10];
+const totalPoints2 = hours
+  .filter(hour => hour >= 8)
+  .map(hour => hour * 10)
+  .reduce((sum, point) => sum + point, 0);
+// Output: 270
+
+// Q10. Interview Brain Teaser – Sum of Squares of Even Numbers
+const numbers = [1, 2, 3, 4, 5, 6];
+const sumOfSquares = numbers
+  .filter(num => num % 2 === 0)
+  .map(num => num * num)
+  .reduce((sum, num) => sum + num, 0);
+// Output: 56
