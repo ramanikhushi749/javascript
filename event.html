@@ -9,21 +9,58 @@
             width: 200px;
             height: 200px;
             border: 1px solid red;
-
+        }
+        .device{
+            text-transform: capitalize;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
         }
     </style>
 </head>
 <body>
     <div class="color-card"></div>
-    <button class ="btn">color change</button>
-    <br />
-    <br />
+    <button class="btn">Color change</button>
+    <br/>
+    <br/>
 
-    <input type="text">
-    <br />
-    <br />
     <button class="btn1">dark mode</button>
+    <br/>
+    <br/>
+    <input type="text">
+    <br/>
+    <br/>
+
+    <h2>select mobile: <i class="device">none</i></h2>
+    <select class="sel"> 
+        <option>Select your device</option>   
+        <option value="phone">phone</option>
+        <option value="laptop">laptop</option>
+        <option value="watch">watch</option>
+        <option value="Tablet">Tablet</option>
+    </select>
+
+    <div class="box"></div>
+    <br>
+    change backgroud color: <input type="color" class="bg-inp"><br>
+    change backgroud color: <input type="color" class="color-inp">
+
+    <form action="">
+        <input type="text" class="keydown">
+        <button type="submit" value="submit">submit</button>
+    </form>
+
+    <div class="box2"></div>
+
     <script src="event.js"></script>
     
+
 </body>
 </html>
